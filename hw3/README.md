@@ -9,6 +9,8 @@
 #### 3. Create network bridge
 ```sudo docker network create --driver bridge hw03```
 #### 4. Create an alpine linux based mosquitto container as the local broker
-```docker run --name mosquitto --network hw03 -p 1883:1883 -ti alpine sh```
-```apk update && apk add mosquitto```
-```/usr/sbin/mosquitto```
+```
+docker run --name mosquitto --network hw03 -p 1883:1883 -ti alpine sh
+apk update && apk add mosquitto
+/usr/sbin/mosquitto
+```
