@@ -50,4 +50,20 @@ docker run --name mosquitto --network hw03 -p 1883:1883 -ti alpine sh
 apk update && apk add mosquitto
 /usr/sbin/mosquitto
 ```
+4. Mount the cloud object storage bucket to the VSI
+4.1 Install s3fs on VSI
+```
+sudo apt-get update
+sudo apt-get install automake autotools-dev g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+cd s3fs-fuse
+./autogen.sh
+./configure
+make
+```
+4.2 Enter <service instance id>:<api key> as credentials and set owner-only permissions
+```
+nano /$HOME/.cos_creds
+chmod 600 $HOME/.cos_creds
+```
 
