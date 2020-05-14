@@ -3,7 +3,7 @@
 
 ### Procedures on NVIDIA Jetson TX2:
 #### 1. Build docker image for face detection
-```sudo docker build -t face_detector -f Dockerfile.face_detector .```
+```sudo docker build -t face_detector -f Dockerfile.detector .```
 #### 2. Build docker image for message forwarding
 ```sudo docker build -t forwarder -f Dockerfile.forwarder .```
 #### 1. Create network bridge
