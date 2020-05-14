@@ -6,5 +6,12 @@
 ```sudo docker build -t face_detector -f Dockerfile.detector .```
 #### 2. Build docker image for message forwarding
 ```sudo docker build -t forwarder -f Dockerfile.forwarder .```
-#### 1. Create network bridge
+#### 3. Create network bridge
 ```sudo docker network create --driver bridge hw03```
+#### 4. Create a MQTT container as the local broker
+```docker run --name mosquitto --network hw03 -p 1883:1883 -ti alpine sh
+# we are inside the container now
+# install mosquitto
+apk update && apk add mosquitto
+# run mosquitto
+/usr/sbin/mosquitto```
