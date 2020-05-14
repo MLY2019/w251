@@ -34,16 +34,18 @@ sudo docker run --name forwarder --network hw03 -ti forwarder sh
 python3 forwarder.py
 ```
 ### Procedures on IBM Cloud VSI:
-1.  Create network bridge
-```
-sudo docker network create --driver bridge hw03
-```
-2. Create docker image for saving face images
+1. Create docker image for saving face images
 ```
 sudo docker build -t cloud_saver -f Dockerfile.cloud_saver .
 ```
+2.  Create network bridge
+```
+sudo docker network create --driver bridge hw03
+```
+
 3. Create an alpine linux based mosquitto container as the cloud broker
-```docker run --name mosquitto --network hw03 -p 1883:1883 -ti alpine sh
+```
+docker run --name mosquitto --network hw03 -p 1883:1883 -ti alpine sh
 # inside the container, install and run mosquitt
 apk update && apk add mosquitto
 /usr/sbin/mosquitto
