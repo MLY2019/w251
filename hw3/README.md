@@ -51,19 +51,28 @@ apk update && apk add mosquitto
 /usr/sbin/mosquitto
 ```
 4. Mount the cloud object storage bucket to the VSI
-4.1 Install s3fs on VSI
-```
-sudo apt-get update
-sudo apt-get install automake autotools-dev g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
-git clone https://github.com/s3fs-fuse/s3fs-fuse.git
-cd s3fs-fuse
-./autogen.sh
-./configure
-make
-```
-4.2 Enter <service instance id>:<api key> as credentials and set owner-only permissions
-```
-nano /$HOME/.cos_creds
-chmod 600 $HOME/.cos_creds
-```
+
+  4.1 Install s3fs on VSI
+  ```
+  sudo apt-get update
+  sudo apt-get install automake autotools-dev g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+  git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+  cd s3fs-fuse
+  ./autogen.sh
+  ./configure
+  make
+  ```
+  4.2 Enter <service instance id>:<api key> as credentials and set owner-only permissions
+  ```
+  nano /$HOME/.cos_creds
+  chmod 600 $HOME/.cos_creds
+  ```
+  4.3 Create a folder on VSI as the mounting point
+  ```
+  mkdir /mnt/hw3_bucket
+  ```
+  4.4 Mount the existing bucket "face-images" to the mounting point
+  ```
+  s3fs face-images /mnt/hw3_bucket -o nonempty -o passwd_file=$HOME/.cos_creds -o ibm_iam_auth -o url=https://s3.us.cloud-object-storage.appdomain.cloud -o use_path_request_style
+  ```
 
