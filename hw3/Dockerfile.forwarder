@@ -8,3 +8,5 @@ RUN pip3 install paho-mqtt
 WORKDIR /
 COPY /forwarder.py /
 
+CMD python3 forwarder.py
+
