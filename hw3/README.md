@@ -62,7 +62,7 @@ apk update && apk add mosquitto
     ./configure
     make
     ```
-    4.2 Enter <service instance id>:<api key> as credentials and set owner-only permissions
+    4.2 Enter ```<service instance id>:<api key>``` as credentials and set owner-only permissions
     ```
     nano /$HOME/.cos_creds
     chmod 600 $HOME/.cos_creds
@@ -75,7 +75,7 @@ apk update && apk add mosquitto
     ```
     s3fs face-images /mnt/hw3_bucket -o nonempty -o passwd_file=$HOME/.cos_creds -o ibm_iam_auth -o url=https://s3.us.cloud-object-storage.appdomain.cloud -o use_path_request_style
     ```
-5. Creat a container for saving the messages received from the cloud broker
+5. Creat a container for message saving
 ```
 docker run -d --name cloud_saver -v /mnt/hw3_bucket:/data --network hw03 sh
 # inside the container, run the message saving program
