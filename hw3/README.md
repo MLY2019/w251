@@ -36,11 +36,11 @@ python3 forwarder.py
 ### Procedures on IBM Cloud VSI:
 1. Create docker image for saving face images
 ```
-sudo docker build -t cloud_saver -f Dockerfile.cloud_saver .
+docker build -t cloud_saver -f Dockerfile.cloud_saver .
 ```
 2.  Create network bridge
 ```
-sudo docker network create --driver bridge hw03
+docker network create --driver bridge hw03
 ```
 
 3. Create an alpine linux based mosquitto container as the cloud broker
@@ -52,27 +52,35 @@ apk update && apk add mosquitto
 ```
 4. Mount the cloud object storage bucket to the VSI
 
-  4.1 Install s3fs on VSI
-  ```
-  sudo apt-get update
-  sudo apt-get install automake autotools-dev g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
-  git clone https://github.com/s3fs-fuse/s3fs-fuse.git
-  cd s3fs-fuse
-  ./autogen.sh
-  ./configure
-  make
-  ```
-  4.2 Enter <service instance id>:<api key> as credentials and set owner-only permissions
-  ```
-  nano /$HOME/.cos_creds
-  chmod 600 $HOME/.cos_creds
-  ```
-  4.3 Create a folder on VSI as the mounting point
-  ```
-  mkdir /mnt/hw3_bucket
-  ```
-  4.4 Mount the existing bucket "face-images" to the mounting point
-  ```
-  s3fs face-images /mnt/hw3_bucket -o nonempty -o passwd_file=$HOME/.cos_creds -o ibm_iam_auth -o url=https://s3.us.cloud-object-storage.appdomain.cloud -o use_path_request_style
-  ```
+  	4.1 Install s3fs on VSI
+    ```
+    apt-get update
+    apt-get install automake autotools-dev g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+    git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+    cd s3fs-fuse
+    ./autogen.sh
+    ./configure
+    make
+    ```
+    4.2 Enter <service instance id>:<api key> as credentials and set owner-only permissions
+    ```
+    nano /$HOME/.cos_creds
+    chmod 600 $HOME/.cos_creds
+    ```
+    4.3 Create a folder on VSI as the mounting point
+    ```
+    mkdir /mnt/hw3_bucket
+    ```
+    4.4 Mount the existing bucket "face-images" to the mounting point
+    ```
+    s3fs face-images /mnt/hw3_bucket -o nonempty -o passwd_file=$HOME/.cos_creds -o ibm_iam_auth -o url=https://s3.us.cloud-object-storage.appdomain.cloud -o use_path_request_style
+    ```
+5. Creat a container for saving the messages received from the cloud broker
+```
+docker run -d --name cloud_saver -v /mnt/hw3_bucket:/data --network hw03 sh
+# inside the container, run the message saving program
+python3 cloud_saving.py
+```
+
+
 
