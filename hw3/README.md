@@ -67,7 +67,7 @@ apk update && apk add mosquitto
     nano /$HOME/.cos_creds
     chmod 600 $HOME/.cos_creds
     ```
-    4.3 Create a folder on VSI as the mounting point
+    4.3 Create a directory on VSI as the mounting point
     ```
     mkdir /mnt/hw3_bucket
     ```
