@@ -11,5 +11,5 @@ RUN pip3 install paho-mqtt
 WORKDIR /
 COPY cloud_saving.py .
 
-CMD python cloud_saving.py
+CMD python3 cloud_saving.py
 
