@@ -77,7 +77,7 @@ apk update && apk add mosquitto
     ```
 5. Creat a container for message saving
 ```
-docker run -d --name cloud_saver -v /mnt/hw3_bucket:/data --network hw03 sh
+docker run --name cloud_saver -v /mnt/hw3_bucket:/data --network hw03 -ti cloud_saver sh
 # inside the container, run the message saving program
 python3 cloud_saving.py
 ```
