@@ -1,5 +1,10 @@
 ## Homework 3 - Internet of Things 101
-## Goal: Capture faces in a video stream coming from the edge in real time, transmit them to the cloud in real time, and save these faces in the cloud for long term storage.
+
+### Goal: 
+Capture faces in a video stream coming from the edge in real time, transmit them to the cloud in real time, and save these faces in the cloud for long term storage.
+
+### Architecture and flow: 
+In this IoT architecture, we have two mosquitto broker containers, one on Jetson TX2 and one on cloud VSI, for message receiving and publishing. On TX2, we have a container that connects to the web cam, detects faces and sends face images to the TX2 mosquitto broker and another container that forwards face images to the cloud mosquitto broker. On cloud VSI, we have a container that receives face images from the cloud moquitto broker and saves them to the cloud object storage bucket. 
 
 ### Procedures on NVIDIA Jetson TX2:
 1. Build docker image for face detection
