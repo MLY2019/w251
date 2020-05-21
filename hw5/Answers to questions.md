@@ -3,16 +3,20 @@ TensorFlow is a deep learning framework based on Keras. Google is the leading co
 
 #### 2. What is TensorRT? How is it different from TensorFlow?
 NVIDIA TensorRT is an SDK for high-performance deep learning inference. It includes a deep learning inference optimizer and runtime that delivers low latency and high-throughput for deep learning inference applications. 
+
 While TensorFlow has flexibility running on CPU, GPU or TPU, TensorRT is a GPU only platform but its performance on GPU is superior. 
 
 #### 3. What is ImageNet? How many images does it contain? How many classes?
 ImageNet is an image dataset organized according to the WordNet hierarchy. 
+
 ImageNet contains a total of 14,197,122 images in 21841 classes.
 
 #### 4. Please research and explain the differences between MobileNet and GoogleNet (Inception) architectures.
+GoogleNet is a 27 layers deep convolutional neural network. Within the 27 layers there is a module called inception which is a combination of a 1×1 Convolutional layer, a 3×3 Convolutional layer and a 5×5 Convolutional layer with their output filter banks concatenated into a single output vector forming the input of the next stage. Besides, there are two major add-ons in the original inception module: (1) a 1×1 Convolutional layer before applying another layer, which is mainly used for dimensionality reduction and (2) a parallel Max Pooling layer, which provides another option to the inception layer.
 
+In the Mobile Net architecutre, only the first layer uses the regular convolution. Instead, the next layers uses the depthwise separable convolutions which are the combination of the depthwise and pointwise convolution. The depthwise convolution does the convolution on each channel separately. If the image has three channels, therefore, the output image also has three channels. This depthwise convolution is used to filter the input channels. The next step is the pointwise convolution, which is similar to the regular convolution but with a 1x1 filter. The purpose of pointwise convolution is to merge the output channels of the depthwise convolution to create new features. By doing so, the computational work needed to be done is less than the regular convolutional networks.
 
-In your own words, what is a bottleneck?
+#### 5. In your own words, what is a bottleneck?
 
 
 How is a bottleneck different from the concept of layer freezing?
