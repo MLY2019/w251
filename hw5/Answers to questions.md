@@ -1,13 +1,15 @@
-What is TensorFlow? Which company is the leading contributor to TensorFlow?
+#### 1. What is TensorFlow? Which company is the leading contributor to TensorFlow?
+TensorFlow is a deep learning framework based on Keras. Google is the leading contributor to TensorFlow.
 
+#### 2. What is TensorRT? How is it different from TensorFlow?
+NVIDIA TensorRT is an SDK for high-performance deep learning inference. It includes a deep learning inference optimizer and runtime that delivers low latency and high-throughput for deep learning inference applications. 
+While TensorFlow has flexibility running on CPU, GPU or TPU, TensorRT is a GPU only platform but its performance on GPU is superior. 
 
-What is TensorRT? How is it different from TensorFlow?
+#### 3. What is ImageNet? How many images does it contain? How many classes?
+ImageNet is an image dataset organized according to the WordNet hierarchy. 
+ImageNet contains a total of 14,197,122 images in 21841 classes.
 
-
-What is ImageNet? How many images does it contain? How many classes?
-
-
-Please research and explain the differences between MobileNet and GoogleNet (Inception) architectures.
+#### 4. Please research and explain the differences between MobileNet and GoogleNet (Inception) architectures.
 
 
 In your own words, what is a bottleneck?
