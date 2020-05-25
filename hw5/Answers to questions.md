@@ -17,7 +17,7 @@ GoogleNet is a 27 layers deep convolutional neural network. Within the 27 layers
 In the Mobile Net architecutre, only the first layer uses the regular convolution. Instead, the next layers use the depthwise separable convolutions which are the combination of the depthwise and pointwise convolution. The depthwise convolution does the convolution on each channel separately. If the image has three channels, therefore, the output image also has three channels. This depthwise convolution is used to filter the input channels. The next step is the pointwise convolution, which is similar to the regular convolution but with a 1x1 filter. The purpose of pointwise convolution is to merge the output channels of the depthwise convolution to create new features. By doing so, the computational work needed to be done is less than the regular convolutional networks.
 
 #### 5. In your own words, what is a bottleneck?
-A bottleneck is a layer with significantly fewer neurons than other layers which serves like a information filter.
+A bottleneck is the layer just before the output layer. The bottle neck has significantly fewer neurons than other layers serving as an information filter.
 
 #### 6. How is a bottleneck different from the concept of layer freezing?
 Layer freezing is a technique to control the way the weights are updated. Once a layer is frozen, the weights cannot be updated anymore. While layer freezing aims to accelerate training and to avoid overfitting, the goal of bottleneck layer is to "squeeze" important information out of the noisy data. 
