@@ -26,9 +26,10 @@ Layer freezing is a technique to control the way the weights are updated. Once a
 The previous layers are from a pre-trained neural network (Inception V3), with all the parmeters frozen. For each image, the TF1 lab script ran the frozen layers as the constant part of the network, calculate for each layer and saved the results in a bottleneck file. After generating the bottleneck files, the last layer training began. It randomly selected 10 images, fed in the model the bottleneck files and output the predictions. By comparing the predictions and actual lable, thelast layer's parameters were updated by backpropogation. 
 
 #### 8. How does a low --learning_rate (step 7 of TF1) value (like 0.005) affect the precision? How much longer does training take?
-Unfortunately, I didn't oberserve significant increase on the precision while training took about twice longer. 
+The precision is increased. The training time is just slightly longer. 
 
 #### 9. How about a --learning_rate (step 7 of TF1) of 1.0? Is the precision still good enough to produce a usable graph?
+The precison is worse while the training time is similar. The precision is not stable enough to produce a usable graph.
 
 
 #### 10. For step 8, you can use any images you like. Pictures of food, people, or animals work well. You can even use ImageNet images. How accurate was your model? Were you able to train it using a few images, or did you need a lot?
