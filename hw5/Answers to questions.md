@@ -23,7 +23,7 @@ A bottleneck is the layer just before the output layer. The bottle neck has sign
 Layer freezing is a technique to control the way the weights are updated. Once a layer is frozen, the weights cannot be updated anymore. While layer freezing aims to accelerate training and to avoid overfitting, the goal of bottleneck layer is to "squeeze" important information out of the noisy data. 
 
 #### 7. In the TF1 lab, you trained the last layer (all the previous layers retain their already-trained state). Explain how the lab used the previous layers (where did they come from? how were they used in the process?)
-
+The previous layers are from a pre-trained neural network (Inception V3), with all the parmeters frozen. For each image, the TF1 lab script ran the frozen layers as the constant part of the network, calculate for each layer and saved the results in a bottleneck file. After generating the bottleneck files, the last layer training began. It randomly selected 10 images, fed in the model the bottleneck files and output the predictions. By comparing the predictions and actual lable, thelast layer's parameters were updated by backpropogation. 
 
 #### 8. How does a low --learning_rate (step 7 of TF1) value (like 0.005) affect the precision? How much longer does training take?
 
