@@ -42,5 +42,8 @@ It takes longer for training the default network on CPU. Because GPU has hundred
 The training time on GPU is faster than that on CPU, especially when creating the bottleneck files.
 
 #### 13. Given the hints under the notes section, if we trained Inception_v3, what do we need to pass to replace ??? below to the label_image script? Can we also glean the answer from examining TensorBoard?
-```python -m scripts.label_image --input_layer=Mul --input_height=299 --input_width=299  --graph=tf_files/retrained_graph.pb --image=tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg```
+```
+python -m scripts.label_image --input_layer=Mul --input_height=299 --input_width=299  --graph=tf_files/retrained_graph.pb --image=tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg
+```
+
 We can glean the answer from the "Graph" section on TensorBoard.
