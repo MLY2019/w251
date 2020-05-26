@@ -36,7 +36,7 @@ The precison is worse while the training time is similar. The precision is not s
 
 
 #### 11. Run the TF1 script on the CPU (see instructions above) How does the training time compare to the default network training (section 4)? Why?
-It takes about 50% longer for the training to finish on CPU. Because GPU has hundreds of simpler cores which can compute in parallel, it makes it faster for training a neural network.
+It takes longer for training the default network on CPU. Because GPU has hundreds of simpler cores which can compute in parallel, training on GPU is much faster.
 
 #### 12. Try the training again, but this time do export ARCHITECTURE="inception_v3" Are CPU and GPU training times different?
 
