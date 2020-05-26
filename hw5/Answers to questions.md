@@ -39,7 +39,7 @@ The precison is worse while the training time is similar. The precision is not s
 It takes longer for training the default network on CPU. Because GPU has hundreds of simpler cores which can compute in parallel, training on GPU is much faster.
 
 #### 12. Try the training again, but this time do export ARCHITECTURE="inception_v3" Are CPU and GPU training times different?
-
+The training time on GPU is faster than that on CPU, especially when creating the bottleneck files.
 
 #### 13. Given the hints under the notes section, if we trained Inception_v3, what do we need to pass to replace ??? below to the label_image script? Can we also glean the answer from examining TensorBoard?
 
