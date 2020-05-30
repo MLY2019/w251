@@ -18,6 +18,13 @@ Rolling Stone supports the nationalization of the means of production*...
 ---------------------------------------
 ### Trainin on a P100 VM
 #### Runtimes
-
+CPU times: user 3h 50min 40s, sys: 2h 15min 7s, total: 6h 5min 48s, Wall time: 6h 5min 39s
 
 #### AUC score on validation set
+0.9700
+
+#### Validation sentences prediced with the highest toxicity 
+What an arrogant piece of shit...
+
+#### Validation sentences prediced with the lowest toxicity 
+NO , massive tax increases on businesses means they wont invest...
