@@ -6,7 +6,7 @@ Runtime: 1 hr 51 mins
 
 AUC score on validation set: 
 
-
+---------------------------------------
 #### Trainin on a P100 VM
 Runtime: 6 hrs 5 mins
 
