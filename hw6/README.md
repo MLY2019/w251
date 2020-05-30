@@ -1,5 +1,6 @@
 ## Homework 06 -- Train BERT in a Jupyter Notebook
 
+### Comparison between V100 and P100 VM
 ---------------------------------------
 #### Training on a V100 VM
 Runtime: 1 hr 51 mins
