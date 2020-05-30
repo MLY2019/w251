@@ -1,6 +1,6 @@
 ## Homework 06 -- Train BERT in a Jupyter Notebook
 
-
+---------------------------------------
 #### Training on a V100 VM
 Runtime: 1 hr 51 mins
 
