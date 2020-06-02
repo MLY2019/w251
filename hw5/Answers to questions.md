@@ -33,7 +33,7 @@ The precison is worse while the training time is similar. The precision is not s
 
 
 #### 10. For step 8, you can use any images you like. Pictures of food, people, or animals work well. You can even use ImageNet images. How accurate was your model? Were you able to train it using a few images, or did you need a lot?
-
+Using a lot of images, the model is quite accurate.
 
 #### 11. Run the TF1 script on the CPU (see instructions above) How does the training time compare to the default network training (section 4)? Why?
 It takes longer for training the default network on CPU. Because GPU has many more cores which can compute in parallel, perfect for matrix multiplication and convolution. 
