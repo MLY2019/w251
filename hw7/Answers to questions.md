@@ -6,6 +6,7 @@ The SSD model I used is based on mobilenet and it was tained on WIDERFACE datase
 It achieved reasonable accuracy in my expirial tests although when the object is moving the accuracy drops significantly. I probably will not use this solution to develop a robust, production-grade system.
 
 #### What framerate does this method achieve on the Jetson? Where is the bottleneck?
+The FPS is 8 from my several tests. The bottleneck is running the network on image.
 
 #### Which is a better quality detector: the OpenCV or yours?
 Mine is better.
