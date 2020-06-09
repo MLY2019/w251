@@ -18,13 +18,18 @@ In the config file, transformer's learning rate policy was used and it means tha
 
 #### How big was your training set (mb)? How many training lines did it contain?
 The training set contained two files: 
+
 train.clean.de, 695MB, 4524868 lines;
+
 train.clean.en, 622MB, 4524868 lines.
 
 #### What are the files that a TF checkpoint is comprised of?
 A TF checkpoint is comprised of three files:
+
 meta file: it stores the saved TF graph structure;
+
 index file: it stores the list of saved variables and shapes;
+
 data file: it stores the values of all saved variables.
 
 #### How big is your resulting model checkpoint (mb)?
