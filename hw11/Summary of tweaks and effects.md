@@ -12,7 +12,7 @@ All the above changes made the model performed better and learning converged fas
 
 I also tested the initialzaition method of ```xaiver``` but it didn't improve the model performance as much as ```lecun_uniform``` did. 
 
-The other changes also found effective include increase the training epoch to 20 and increase the batch size to 50. 
+The other changes I made and also found effective include increase the training epoch to 20 and increase the batch size to 50. 
 
 I tried using ```adamax``` instead of ```adam``` as the optimizer but found it degraded the model.
 
