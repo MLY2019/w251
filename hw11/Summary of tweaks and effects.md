@@ -16,5 +16,5 @@ The other changes I made and also found effective include increase the training 
 
 I tried using ```adamax``` instead of ```adam``` as the optimizer but found it degraded the model.
 
-Based on my observations, the hidden layers' parameters are critical to the model performance and if time allows, we should extensively test different values and combinations on those parameters.  
+Based on my observations, the hidden layers' parameters are critical to the model performance and if time allows, we should extensively test different values and combinations on those parameters. For the parameters such as the optimizer and the initilization method, the effect is largely dependent of the task and data. The best draw can only be achieved by experimenting. 
 
